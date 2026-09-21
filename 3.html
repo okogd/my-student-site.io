@@ -1,39 +1,82 @@
-<HTML>
-<HEAD>
-<TITLE>Переключатели и флажки</TITLE>
-</HEAD>
-<BODY>
-<FORM>
-<h3>Анкета</h3>
-<p>Ваше имя:
-<BR><INPUT TYPE='text' VALUE=''><BR>
-<a href="index.html">обратно</a>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Переключатели и флажки</title>
 
-<p>Ваш пол</p>
-<BR><INPUT TYPE='radio' NAME='color'>женский
-<BR><INPUT TYPE='radio' NAME='color'>мужской
+</head>
+<body>
 
+    <div class="main-content">
 
-<p>На каком курсе вы учитесь:</p>
-<TR><TD VALIGN='top'>
+        <div id="output" class="result-box"></div>
+    </div>
 
-<SELECT NAME='COUNTRY' SIZE='1'>
-<OPTION VALUE='Беларусь'>Первый
-<OPTION VALUE='Казахстан'>Второй
-<OPTION VALUE='Россия'>Третий
-<OPTION VALUE='Украина'>Четвёртый
-</SELECT></TD>
+    <div class="sidebar-form">
+        <form id="anketaForm">
+            <h3>Анкета</h3>
+            
+            <p>Ваше имя:<br>
+                <input type="text" name="userName" required>
+            </p>
+            
+            <p><a href="index.html">обратно</a></p>
 
-<p>Какие языки программирования вы знаете?</p>
-<BR><INPUT TYPE= 'checkbox' NAME='fruit'>Паскаль
-<BR><INPUT TYPE= 'checkbox' NAME='fruit'>СИ
-<BR><INPUT TYPE= 'checkbox' NAME='fruit'>Ассемблер<BR>
+            <p>Ваш пол</p>
+            <label><input type="radio" name="gender" value="женский">женский</label><br>
+            <label><input type="radio" name="gender" value="мужской">мужской</label>
 
-<p>Напишите немного о себе</p>
-<BR><INPUT TYPE='text' VALUE='     '><BR>
+            <p>На каком курсе вы учитесь:</p>
+            <select name="course" size="1">
+                <option value="Первый">Первый</option>
+                <option value="Второй">Второй</option>
+                <option value="Третий">Третий</option>
+                <option value="Четвёртый">Четвёртый</option>
+            </select>
 
-<BR><INPUT TYPE= 'button' VALUE='Отправка данных' ONCLICK=window. open('mailto:MyAddress@mail.ru');>
-<BR><INPUT TYPE= 'button' VALUE='Сброс значений полей'
-ONCLICK=window.open('http:\\\\www.MySite.org\\MyFoto.htm');> </FORM>
-</BODY>
-</HTML>
+            <p>Какие языки программирования вы знаете?</p>
+            <label><input type="checkbox" name="lang" value="Паскаль">Паскаль</label><br>
+            <label><input type="checkbox" name="lang" value="СИ">СИ</label><br>
+            <label><input type="checkbox" name="lang" value="Ассемблер">Ассемблер</label>
+
+            <p>Напишите немного о себе</p>
+            <textarea name="about" rows="3" style="width: 100%; box-sizing: border-box;"></textarea><br><br>
+
+            <input type="submit" value="Отправка данных"><br><br>
+            <input type="reset" value="Сброс значений полей">
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('anketaForm');
+        const output = document.getElementById('output');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const userName = formData.get('userName');
+            const gender = formData.get('gender') || 'не указан';
+            const course = formData.get('course');
+            const languages = formData.getAll('lang').join(', ') || 'нет';
+            const about = formData.get('about') || 'нет данных';
+
+            output.innerHTML = `
+                <h3>Полученные данные:</h3>
+                <p><b>Имя:</b> ${userName}</p>
+                <p><b>Пол:</b> ${gender}</p>
+                <p><b>Курс:</b> ${course}</p>
+                <p><b>Языки:</b> ${languages}</p>
+                <p><b>О себе:</b> ${about}</p>
+            `;
+            output.style.display = 'block';
+        });
+
+        form.addEventListener('reset', function() {
+            output.style.display = 'none';
+            output.innerHTML = '';
+        });
+    </script>
+
+</body>
+</html>
