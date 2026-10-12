@@ -1,0 +1,37 @@
+/* Общие стили */
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    background-color: #95d099;
+}
+
+/* Меню */
+#menu {
+    background-color: #95d099;
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+#menu div {
+    display: inline;
+    margin-right: 15px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+script {
+text-decoration: sans-serif;
+    color: blue;
+    font-weight: bold;
+	}
+/* Обычные блоки */
+.box {
+    border: 1px solid gray;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
