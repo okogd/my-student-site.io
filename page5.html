@@ -1,36 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Позиционирование</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Моя страница с музыкой и видео</title>
     <style>
-        .left {
-            float: left;
-            width: 200px;
-            background: lightblue;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
         }
-        .right {
-            float: right;
-            width: 200px;
-            background: lightgreen;
+        .container {
+            background: white;
+            padding: 15px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
         }
-        .rel-block {
-            position: relative;
-            background: lightgray;
-            height: 100px;
-            margin-top: 150px; /* Чтобы не налезло на float */
+        h2 {
+            color: #333;
         }
-        .abs-block {
-            position: absolute;
-            top: 10px;
-            left: 50px;
-            background: orange;
+        /* Чтобы видео не растягивалось на весь экран */
+        video {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
+<link rel="stylesheet" type="text/css" href="style.css">
 <body>
-
     <div id="menu">
         <div><a href="index.html">Главная</a></div>
         <div><a href="page2.html">Страница 2</a></div>
@@ -39,15 +35,18 @@
         <div><a href="page5.html">Дивы</a></div>
     </div>
 
-    <div class="box">
-        <h2>Блоки float</h2>
-        <div class="left">Левый блок float</div>
-        <div class="right">Правый блок float</div>
-        
-        <div class="rel-block">
-            Родитель relative
-            <div class="abs-block">Элемент absolute</div>
-        </div>
+    <h1>Моя медиа страница</h1>
+
+    <div class="container">
+        <h2>Моя музыка</h2>
+        <audio src="1.mp3" controls></audio>
+
+    </div>
+
+    <div class="container">
+        <h2>Моё видео</h2>
+        <video src="1.mp4" controls width="640"></video>
+
     </div>
 
 </body>
