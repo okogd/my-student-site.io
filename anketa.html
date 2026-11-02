@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>Анкета</TITLE>
+<link href="style.css" rel="stylesheet">
+</HEAD>
+<BODY>
+ <div id="menu"><script language="JavaScript" src="menu.js" type="text/javascript"></script></div>
+<h1>Анкета</h1>
+<FORM name="forma">
+<!-- Поле ввода -->
+<BR>Ваше имя: <BR><INPUT TYPE='text' id="name" VALUE=''><BR>
+
+<!-- Группа переключателей -->
+<p>Ваш пол <BR>
+<INPUT TYPE='radio' id="pol_f" NAME='pol'>женский
+<INPUT TYPE='radio' id="pol_m" NAME='pol'>мужской
+
+<H2>Ваш курс?</H2>
+<SELECT id="kurs" NAME='kurs' SIZE='1'>
+<OPTION VALUE='первый'>первый
+<OPTION VALUE='второй'>второй
+<OPTION VALUE='третий'>третий
+<OPTION VALUE='четвёртый'>четвёртый
+</SELECT>
+
+<!-- Группа флажков -->
+<H2>Какие языки программирования вы знаете?</H2>
+<BR><INPUT TYPE='checkbox' id="lang_pas" NAME='lang'>Паскаль
+<BR><INPUT TYPE='checkbox' id="lang_c" NAME='lang'>СИ
+<BR><INPUT TYPE='checkbox' id="lang_asm" NAME='lang'>Ассемблер<BR>
+
+<!-- Кнопки -->
+<BR><INPUT TYPE='button' VALUE='Отправка данных' onclick="showData()">
+<BR><button type="reset" onclick="clearResult()">Очистить</button>
+</FORM>
+
+<p id="result"></p>
+
+<script language="JavaScript" src="anketa.js" type="text/javascript"></script>
+</BODY>
+</HTML>

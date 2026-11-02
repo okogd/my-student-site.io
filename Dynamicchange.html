@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Динамическое изменение</title>
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript">
+        var arr = ["Ivanov", "Petrov", "Sidorov"];
+        var counter = 0;
+
+        function add_to_list() {
+            if (typeof(arr[counter]) != "undefined") {
+                var list = document.getElementById('list');
+                var li = document.createElement('LI');
+                li.innerHTML = arr[counter];
+                list.appendChild(li);
+                counter++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="menu"><script language="JavaScript" src="menu.js" type="text/javascript"></script></div><br>
+    
+    <p onclick="add_to_list()">Добавить в список</p>
+    <ul id="list"></ul>
+
+    <button type="reset" onclick="location.href='Dynamicchange.html'">Очистить</button>
+</body>
+</html>

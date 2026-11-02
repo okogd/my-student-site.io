@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изображения-карты</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .map-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .map-container img {
+            border: 2px solid #16a085;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+        }
+        .legend {
+            background-color: #eaf6f2;
+            border: 1px solid #bfe0d6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .legend h3 {
+            color: #16a085;
+            margin-top: 0;
+        }
+        .legend ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .legend li {
+            padding: 5px 0;
+            border-bottom: 1px solid #bfe0d6;
+        }
+        .legend li:last-child {
+            border-bottom: none;
+        }
+        .legend a {
+            color: #16a085;
+            text-decoration: none;
+        }
+        .legend a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <script src="menu.js"></script>
+    </div>
+        <img src="прямоугольник.gif" 
+             alt="Прямоугольник с диагоналями" 
+             usemap="#rectmap" 
+             width="300" height="200">
+
+        <map name="rectmap">
+            <!-- Верхний треугольник (красный) -->
+            <area shape="poly" 
+                  coords="0,0,300,0,150,100" 
+                  href="index.html" 
+                  alt="Главная страница" 
+                  title="Переход на главную страницу">
+            
+            <!-- Правый треугольник (жёлтый) -->
+            <area shape="poly" 
+                  coords="300,0,300,200,150,100" 
+                  href="table.html" 
+                  alt="Таблицы" 
+                  title="Переход к таблицам">
+            
+            <!-- Нижний треугольник (розовый) -->
+            <area shape="poly" 
+                  coords="300,200,0,200,150,100" 
+                  href="anketa.html" 
+                  alt="Анкета" 
+                  title="Переход к анкете">
+            
+            <!-- Левый треугольник (голубой) -->
+            <area shape="poly" 
+                  coords="0,200,0,0,150,100" 
+                  href="Dynamicchange.html" 
+                  alt="Динамическое изменение" 
+                  title="Переход к динамическому изменению">
+        </map>
+
+    <br>
+<div class="map-container" style="position: relative; display: inline-block;">
+    <img src="город.gif" 
+         alt="Карта 51-го микрорайона" 
+         usemap="#citymap" 
+         width="800" height="600"
+         style="display: block; max-width: 100%; height: auto;">
+
+    <map name="citymap">
+        <!-- ОСНОВНЫЕ УЛИЦЫ И ДОРОГИ -->
+        <!-- Улица Энгельса (верхняя наклонная граница застройки) -->
+        <area shape="poly" 
+              coords="22,210,240,210,345,210,600,180,750,110,740,100,345,200,22,200"  
+              alt="Улица Энгельса" 
+              title="Улица Энгельса"
+              href="#">
+
+        <!-- Проспект Маркса (вертикальное шоссе слева) -->
+        <area shape="poly" 
+              coords="90,110,115,110,100,590,75,590" 
+              alt="Проспект Маркса" 
+              title="Проспект Маркса"
+              href="#">
+
+        <!-- Улица Калужская (наклонная центральная дорога) -->
+        <area shape="poly" 
+              coords="316,220,340,220,442,470,420,470" 
+              alt="Улица Калужская" 
+              title="Улица Калужская"
+              href="#">
+
+        <!-- Географическая улица (горизонтальная улица внизу) -->
+        <area shape="rect" 
+              coords="430,470,680,490" 
+              alt="Географическая улица" 
+              title="Географическая улица"
+              href="#">
+
+
+        <!-- ПРИРОДНЫЕ И ОТКРЫТЫЕ ЗОНЫ -->
+        <!-- Большое зелёное поле / пустырь (вверху по центру) -->
+        <area shape="poly" 
+              coords="240,2,570,2,600,175,345,205,240,205" 
+              alt="Зеленая зона (пустырь)" 
+              title="Зеленая зона (пустырь)"
+              href="#">
+
+        <!-- Лесной массив (справа вверху у воды) -->
+        <area shape="poly" 
+              coords="640,2,798,2,798,60,690,100" 
+              alt="Лесопарковая зона" 
+              title="Лесопарковая зона"
+              href="#">
+
+
+        <!-- ХАРАКТЕРНЫЕ ЖИЛЫЕ ДОМА И ОБЪЕКТЫ -->
+        <!-- Дома-трилистники (фиолетовые значки во дворах) -->
+        <area shape="circle" coords="176,325,15" alt="Жилой дом (Трилистник, Запад)" title="Жилой дом (Трилистник, Запад)" href="#">
+        <area shape="circle" coords="252,305,15" alt="Жилой дом (Трилистник, Северо-Запад)" title="Жилой дом (Трилистник, Северо-Запад)" href="#">
+        <area shape="circle" coords="275,418,15" alt="Жилой дом (Трилистник, Юго-Запад)" title="Жилой дом (Трилистник, Юго-Запад)" href="#">
+        <area shape="circle" coords="300,515,15" alt="Жилой дом (Трилистник, Юг)" title="Жилой дом (Трилистник, Юг)" href="#">
+        <area shape="circle" coords="528,405,15" alt="Жилой дом (Трилистник, Центр)" title="Жилой дом (Трилистник, Центр)" href="#">
+
+        <!-- Изогнутые длинные дома (зеленые дуги) -->
+        <area shape="poly" coords="128,290,160,290,150,380,120,380" alt="Изогнутый жилой дом (Западный контур)" title="Изогнутый жилой дом (Западный контур)" href="#">
+        <area shape="poly" coords="300,265,320,300,260,370,240,340" alt="Изогнутый жилой дом (Центральный контур)" title="Изогнутый жилой дом (Центральный контур)" href="#">
+
+        <!-- Учреждения внутри квартала (коричневые прямоугольные здания) -->
+        <area shape="rect" coords="455,305,475,340" alt="Общественное здание / Школа" title="Общественное здание / Школа" href="#">
+        <area shape="rect" coords="490,360,510,395" alt="Детский сад / Учреждение" title="Детский сад / Учреждение" href="#">
+
+        <!-- Серая промышленно-коммунальная зона (справа) -->
+        <area shape="poly" 
+              coords="550,300,730,240,798,240,798,590,670,590,550,460" 
+              alt="Коммунально-складская зона и застройка" 
+              title="Коммунально-складская зона и застройка"
+              href="#">
+    </map>
+</div>
+
+</body>
+</html>
