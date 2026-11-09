@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>квадрат</title>
+    <style>
+        .kub {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+        }
+        .goluboy {
+            background: #00FFFF;
+        }
+        .siniy {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const size = 10; 
+        for (var i = 1; i <= size; i++) {
+            for (var j = 1; j <= size; j++) {
+                if (i + j <= size) {
+                    document.write('<span class="kub goluboy"></span>');
+                } else {
+                    document.write('<span class="kub siniy"></span>');
+                }
+                
+            }
+            document.write('<br>');
+        }
+
+</script>
+</body>
+</html>
